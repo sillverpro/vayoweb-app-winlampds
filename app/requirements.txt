@@ -1,0 +1,6 @@
+pywebview>=6.0
+cryptography>=44
+psutil>=5.9
+certifi
+pystray>=0.19
+Pillow>=10

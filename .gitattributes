@@ -1,0 +1,21 @@
+# Normalise line endings: LF in the repo, so Windows and Mac don't fight.
+* text=auto
+
+# Windows batch files must keep CRLF or cmd.exe can misparse labels/goto.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary - never touch line endings or try to diff
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.zip binary
+*.exe binary
+*.dll binary
+*.pyc binary

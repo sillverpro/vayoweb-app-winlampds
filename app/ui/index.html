@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DevStack</title>
+<link rel="stylesheet" href="style.css">
+<script>try {
+  const r = document.documentElement, t = localStorage.getItem("theme"), f = localStorage.getItem("font"), z = localStorage.getItem("scale");
+  if (t === "dark" || t === "light") r.dataset.theme = t;
+  if (f) r.style.setProperty("--font", JSON.stringify(f) + ", system-ui, sans-serif");
+  if (z && z !== "default") r.dataset.scale = z;
+} catch { /* no storage */ }</script>
+</head>
+<body>
+<div id="preload"><div class="preload-box"><span class="logo">DS</span><div class="spinner"></div><div class="muted small" id="preload-msg">Starting DevStack…</div></div></div>
+<div class="app">
+  <nav class="side">
+    <div class="brand"><span class="logo">DS</span><span class="brand-name">DevStack<span class="ver-line"><button type="button" class="ver" id="ver" title="What's new" hidden></button><button type="button" class="ver" id="about-link" title="About DevStack">About</button></span></span></div>
+    <a data-view="dashboard" class="active"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+    <a data-view="servers"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg>Servers</a>
+    <a data-view="sites"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a13.5 13.5 0 0 0 0 18 13.5 13.5 0 0 0 0-18M3 12h18"/></svg>Sites</a>
+    <a data-view="php"><svg class="ic" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>PHP</a>
+    <a data-view="database"><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="2.8"/><path d="M4 5.5v13c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8v-13M4 12c0 1.5 3.6 2.8 8 2.8s8-1.3 8-2.8"/></svg>Database</a>
+    <a data-view="certs"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></svg>Certificates</a>
+    <a data-view="mail"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Mail<span class="badge" id="mail-badge" hidden></span></a>
+    <a data-view="logs"><svg class="ic" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Logs</a>
+    <a data-view="settings"><svg class="ic" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>Settings</a>
+    <div class="side-foot" id="side-foot"></div>
+  </nav>
+  <main id="main"><div class="loading">Loading…</div></main>
+</div>
+
+<dialog id="dialog"><form method="dialog" id="dialog-form"></form></dialog>
+<div id="jobs"></div>
+<div id="toasts"></div>
+
+<script src="vendor/qrcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

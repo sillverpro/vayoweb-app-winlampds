@@ -1,0 +1,56 @@
+# Git carries only the DevStack app itself (app/ + docs). Everything below is
+# runtime state that the app or bootstrap.py creates, or machine-specific data
+# that must not follow the repo to another computer.
+
+# Server binaries (Apache/PHP/MySQL, ~1.6 GB). install.bat (bootstrap.py)
+# downloads them; the app's own installers add more versions. bin/cli/*.bat is generated
+# with this machine's paths baked in.
+/bin/
+
+# phpMyAdmin, a third-party download that the app installs and updates itself
+/apps/
+
+# Generated from config/devstack.json on every save. devstack.json holds
+# absolute F:/ paths and the MySQL root password.
+/config/
+
+# MySQL data directory, the mail catcher's .eml files and .sql backups. These
+# are real databases, so move them by export/import, never through git.
+/data/
+
+# Local CA private key + per-site certificates. The CA is trusted by Windows;
+# leaking its key would let anyone mint certificates this machine accepts.
+/ssl/
+
+# Sites. Each project has (or should have) its own repo. www/localhost is
+# copied from app/templates/localhost.
+/www/
+
+# macOS port workspace, committed to its own repo
+/for_mackbook/
+
+# Runtime output: logs, WebView2 profile, opcache, downloads, site backups
+/logs/
+/tmp/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Personal working notes (brief-mode report logs, client migration notes)
+/docs/chat-log/
+/website_change_file.txt
+
+# Per-machine Claude Code permissions (the shared .claude/settings.json is fine)
+.claude/settings.local.json
+
+# Editor / OS clutter
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Machine-specific notes for Claude (this install's sites, history)
+/CLAUDE.local.md
