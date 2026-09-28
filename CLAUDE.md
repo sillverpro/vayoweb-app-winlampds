@@ -140,7 +140,8 @@ config/  data/mysql  data/exports (.sql backups)  ssl/  logs/  tmp/  www/
 
 ## Source control
 Public repo `github.com/sillverpro/vayoweb-app-winlampds`. Git carries **only the app**: `app/`, `DevStack.bat`, `install.bat`, docs, CHANGELOG.
-Not in git (see `.gitignore`): `bin/`, `apps/`, `config/`, `data/`, `ssl/`, `www/`, `logs/`, `tmp/`, `docs/chat-log/`, `CLAUDE.local.md`.
+Not in git (see `.gitignore`): `bin/`, `apps/`, `config/`, `data/`, `ssl/`, `www/`, `logs/`, `tmp/`.
+Personal ignores (notes, logs, side projects) go in `.git/info/exclude`, not `.gitignore` (the repo is public).
 - Machine-specific notes (this install's sites, versions, history) go in `CLAUDE.local.md`, never in this public file.
 - Fresh clone: `install.bat` (= pip install + `python app/bootstrap.py`) downloads everything into `bin/` + `apps/`,
   writes a new `config/devstack.json`, a new local CA (`ssl/`) and an empty MySQL datadir (root, no password);
@@ -148,7 +149,6 @@ Not in git (see `.gitignore`): `bin/`, `apps/`, `config/`, `data/`, `ssl/`, `www
   scratch copy on 2026-09-28 (Apache 2.4.68, PHP 8.3.35 + 8.5.11, MySQL 9.7.2, phpMyAdmin 5.2.3).
 - Databases move with Database -> Export/Import (or a copy of `data/mysql` while MySQL is stopped), never via this repo.
 - Sites (`www/`) are separate repos; re-add them with Sites -> Add existing folders.
-- Mac: the app is Windows-only. A macOS port lives in `for_mackbook/` (gitignored here, its own repo; see its agent.md).
 - Line endings: `.gitattributes` (`text=auto`, `.bat` = CRLF) + `core.autocrlf=input`. Set `git config core.autocrlf input` on each new clone.
 
 ## Ideas not started (only if asked)

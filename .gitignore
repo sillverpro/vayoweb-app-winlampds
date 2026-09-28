@@ -26,9 +26,6 @@
 # copied from app/templates/localhost.
 /www/
 
-# macOS port workspace, committed to its own repo
-/for_mackbook/
-
 # Runtime output: logs, WebView2 profile, opcache, downloads, site backups
 /logs/
 /tmp/
@@ -36,10 +33,6 @@
 # Python bytecode
 __pycache__/
 *.py[cod]
-
-# Personal working notes (brief-mode report logs, client migration notes)
-/docs/chat-log/
-/website_change_file.txt
 
 # Per-machine Claude Code permissions (the shared .claude/settings.json is fine)
 .claude/settings.local.json
@@ -51,6 +44,3 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
-
-# Machine-specific notes for Claude (this install's sites, history)
-/CLAUDE.local.md
